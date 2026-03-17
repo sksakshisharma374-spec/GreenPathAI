@@ -1,0 +1,70 @@
+/**
+ * Polylines Animation Styles
+ * CSS animations for active corridor polylines
+ */
+
+/* Pulse animation for active corridor polylines */
+@keyframes polyline-pulse {
+  0% {
+    opacity: 0.9;
+    stroke-width: 5px;
+  }
+  50% {
+    opacity: 1;
+    stroke-width: 6px;
+  }
+  100% {
+    opacity: 0.9;
+    stroke-width: 5px;
+  }
+}
+
+/* Glow effect animation */
+@keyframes polyline-glow {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(0, 255, 0, 0.4))
+      drop-shadow(0 0 4px rgba(0, 255, 0, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 6px rgba(0, 255, 0, 0.8))
+      drop-shadow(0 0 12px rgba(0, 255, 0, 0.4));
+  }
+  100% {
+    filter: drop-shadow(0 0 2px rgba(0, 255, 0, 0.4))
+      drop-shadow(0 0 4px rgba(0, 255, 0, 0.2));
+  }
+}
+
+/* Dashing animation for movement effect */
+@keyframes dash-animation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 100;
+  }
+}
+
+/* Apply animation to active animated polylines */
+.polyline-active-animated {
+  animation: polyline-pulse 2s ease-in-out infinite,
+    polyline-glow 2s ease-in-out infinite;
+  stroke: #00ff00 !important;
+}
+
+/* Hover effect on polylines */
+.leaflet-interactive:hover {
+  opacity: 1 !important;
+  stroke-width: 4px;
+}
+
+/* Popup styling */
+.popup-content {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.popup-content strong {
+  color: #333;
+}

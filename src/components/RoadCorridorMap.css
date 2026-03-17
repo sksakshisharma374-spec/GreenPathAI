@@ -1,0 +1,204 @@
+/**
+ * Road Corridor Map Styles
+ * Main container, map, and control panel styling
+ */
+
+.road-corridor-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Header */
+.road-corridor-container h1 {
+  margin: 0;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Map Container */
+.map-container {
+  flex: 1;
+  z-index: 1;
+  border: none;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Control Panel */
+.control-panel {
+  position: absolute;
+  top: 80px;
+  right: 16px;
+  width: 300px;
+  max-height: 80vh;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  padding: 0;
+  z-index: 500;
+}
+
+/* Control Panel Scrollbar */
+.control-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.control-panel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.control-panel::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.control-panel::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Legend Styles */
+.legend {
+  padding: 16px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.legend h3 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #555;
+}
+
+.legend-item:last-child {
+  margin-bottom: 0;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  flex-shrink: 0;
+}
+
+/* Corridor Selector Styles */
+.corridor-selector {
+  padding: 16px;
+}
+
+.corridor-selector h3 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.selector-btn {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border: 2px solid #ddd;
+  background: #f9f9f9;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.selector-btn:hover {
+  background: #f0f0f0;
+  border-color: #999;
+  transform: translateX(4px);
+}
+
+.selector-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.selector-btn:last-child {
+  margin-bottom: 0;
+}
+
+/* Leaflet Container Overrides */
+.leaflet-container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-content {
+  font-size: 13px;
+  color: #333;
+}
+
+/* Marker Styles */
+.leaflet-marker-icon {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .road-corridor-container h1 {
+    font-size: 20px;
+    padding: 12px 16px;
+  }
+
+  .control-panel {
+    width: 280px;
+    right: 8px;
+    top: 70px;
+    max-height: 70vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .control-panel {
+    width: 260px;
+    right: 4px;
+    top: 60px;
+    max-height: 65vh;
+  }
+
+  .legend,
+  .corridor-selector {
+    padding: 12px;
+  }
+
+  .legend h3,
+  .corridor-selector h3 {
+    font-size: 12px;
+  }
+
+  .selector-btn {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}
